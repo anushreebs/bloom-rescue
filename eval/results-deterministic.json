@@ -156,7 +156,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "I built REST API endpoints with request validation.",
-      "latency_ms": 0.729,
+      "latency_ms": 0.444,
       "tokens": null
     },
     {
@@ -173,7 +173,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "I wrote pytest tests for request validation.",
-      "latency_ms": 0.086,
+      "latency_ms": 0.064,
       "tokens": null
     },
     {
@@ -190,7 +190,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "I deployed a service to AWS.",
-      "latency_ms": 0.088,
+      "latency_ms": 0.056,
       "tokens": null
     },
     {
@@ -207,7 +207,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "I built React interfaces in TypeScript.",
-      "latency_ms": 0.077,
+      "latency_ms": 0.053,
       "tokens": null
     },
     {
@@ -224,7 +224,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.029,
+      "latency_ms": 0.023,
       "tokens": null
     },
     {
@@ -241,7 +241,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.011,
+      "latency_ms": 0.009,
       "tokens": null
     },
     {
@@ -258,7 +258,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.01,
+      "latency_ms": 0.008,
       "tokens": null
     },
     {
@@ -275,7 +275,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.01,
+      "latency_ms": 0.007,
       "tokens": null
     },
     {
@@ -309,7 +309,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.005,
+      "latency_ms": 0.002,
       "tokens": null
     },
     {
@@ -326,7 +326,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.001,
+      "latency_ms": 0.0,
       "tokens": null
     },
     {
@@ -343,7 +343,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.002,
+      "latency_ms": 0.001,
       "tokens": null
     },
     {
@@ -394,7 +394,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.004,
+      "latency_ms": 0.003,
       "tokens": null
     },
     {
@@ -411,7 +411,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.013,
+      "latency_ms": 0.009,
       "tokens": null
     },
     {
@@ -428,7 +428,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.01,
+      "latency_ms": 0.008,
       "tokens": null
     },
     {
@@ -445,7 +445,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.01,
+      "latency_ms": 0.008,
       "tokens": null
     },
     {
@@ -462,7 +462,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.012,
+      "latency_ms": 0.009,
       "tokens": null
     },
     {
@@ -479,7 +479,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.027,
+      "latency_ms": 0.019,
       "tokens": null
     },
     {
@@ -496,7 +496,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "I built REST API endpoints with request validation.",
-      "latency_ms": 0.129,
+      "latency_ms": 0.061,
       "tokens": null
     },
     {
@@ -513,7 +513,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.081,
+      "latency_ms": 0.021,
       "tokens": null
     },
     {
@@ -530,7 +530,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.029,
+      "latency_ms": 0.021,
       "tokens": null
     },
     {
@@ -547,7 +547,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.053,
+      "latency_ms": 0.042,
       "tokens": null
     },
     {
@@ -564,7 +564,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.068,
+      "latency_ms": 0.053,
       "tokens": null
     },
     {
@@ -582,7 +582,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.063,
+      "latency_ms": 0.05,
       "tokens": null
     },
     {
@@ -600,7 +600,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.059,
+      "latency_ms": 0.046,
       "tokens": null
     },
     {
@@ -618,7 +618,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.07,
+      "latency_ms": 0.062,
       "tokens": null
     },
     {
@@ -636,7 +636,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.064,
+      "latency_ms": 0.051,
       "tokens": null
     },
     {
@@ -654,7 +654,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.067,
+      "latency_ms": 0.054,
       "tokens": null
     },
     {
@@ -671,7 +671,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "I have not deployed a service to AWS.",
-      "latency_ms": 0.117,
+      "latency_ms": 0.059,
       "tokens": null
     },
     {
@@ -688,7 +688,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.003,
+      "latency_ms": 0.002,
       "tokens": null
     },
     {
@@ -706,7 +706,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.004,
+      "latency_ms": 0.003,
       "tokens": null
     },
     {
@@ -724,7 +724,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.098,
+      "latency_ms": 0.052,
       "tokens": null
     },
     {
@@ -741,7 +741,7 @@
       "review_ok": true,
       "mode_ok": true,
       "answer": "",
-      "latency_ms": 0.01,
+      "latency_ms": 0.008,
       "tokens": null
     }
   ],

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ApiError, request } from "./api";
+import { ApiError, request, resetDemo } from "./api";
 import type { Application, AuditEvent, Evidence } from "./types";
 import {
   WorkflowProgress,
@@ -1007,6 +1007,23 @@ export default function App() {
           )}
         </section>
         <footer className="page-footer">
+          <button
+            type="button"
+            disabled={busy}
+            onClick={() => {
+              if (
+                window.confirm(
+                  "Reset this fictional workspace? Your demo answers and history will be deleted.",
+                )
+              ) {
+                void resetDemo().catch(() =>
+                  setError("Reset failed. Please retry."),
+                );
+              }
+            }}
+          >
+            Reset demo workspace
+          </button>
           Built to make uncertainty visible. Independent concept · fictional
           data · human approval required.
         </footer>

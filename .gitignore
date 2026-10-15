@@ -11,3 +11,6 @@ __pycache__/
 frontend/dist/
 frontend/test-results/
 frontend/playwright-report/
+
+*.workspaces/
+frontend/test-results-public/

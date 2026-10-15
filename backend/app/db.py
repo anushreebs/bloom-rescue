@@ -12,6 +12,7 @@ CANDIDATE = "c-demo"
 @contextmanager
 def connect(path: str):
     connection = sqlite3.connect(path, timeout=10)
+    connection.execute("PRAGMA max_page_count=256")
     connection.row_factory = sqlite3.Row
     try:
         yield connection

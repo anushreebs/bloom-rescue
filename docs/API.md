@@ -2,7 +2,7 @@
 
 This is an independent fictional demo, not a Bloom or employer integration. Run from `backend` using `uvicorn app.main:app --host 127.0.0.1 --port 8000`. OpenAPI documentation is at `/docs`. `create_app(db_path)` constructs an isolated test instance. `DATABASE_PATH` defaults to `data/bloom-rescue.sqlite3`.
 
-All data routes require `X-Demo-Token`, configured using `DEMO_API_TOKEN` (default `local-demo-token`). This is a local demo boundary, not multi-user authentication. Candidate identity is fixed server-side to `c-demo`. `/health` is public. CORS defaults to localhost frontend origins.
+All data routes require a server-issued HttpOnly demo session cookie. `POST /session` bootstraps a fictional workspace with an exact allowed Origin and returns `csrf_token`. Subsequent mutations require that Origin and `X-CSRF-Token`. `POST /session/reset` deletes only the current workspace and invalidates its cookie; bootstrap again for fresh seeds. Sessions expire after one hour. `/health` is public. Local mode permits loopback HTTP; public mode requires Secure cookies and exact HTTPS `DEMO_ORIGINS`. See [deployment settings and limits](../DEPLOYMENT.md). Candidate `c-demo` is fixed inside each private session database, never shared across visitors.
 
 | Method and route | Behavior |
 |---|---|
@@ -29,6 +29,6 @@ Technical approval is deliberately extractive and conservative: current context-
 
 - A process killed during `resolving` can be retried after a two-minute lease through the same resolve endpoint; active work returns409. Revisions discard late results. Persisted `submitting` states can check authoritative mock status and safely recover both before and after acceptance; this guarantee must not be generalized to a real ATS.
 - A submission with no reconcilable receipt stays verification-required; it is never blindly replayed. Operator recovery beyond reconciliation is deferred.
-- No real authentication, uploads, ATS, telemetry backend, or production deployment is included.
+- Anonymous session authorization is included; real candidate accounts, uploads, ATS, telemetry backend and a performed production deployment are not included.
 - API-mode operation requires explicit configuration and a live test; deterministic tests do not establish live model behavior.
 - Saved answers currently require context-compatible retrieval, not semantic paraphrase. Editing beyond verbatim evidence is rejected rather than assessed by an unvalidated semantic judge.

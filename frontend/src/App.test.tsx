@@ -42,6 +42,8 @@ beforeEach(() => {
   vi.stubGlobal(
     "fetch",
     vi.fn(async (input: string, options?: RequestInit) => {
+      if (input.endsWith("/session"))
+        return Response.json({ csrf_token: "test-csrf" });
       if (input.endsWith("/health"))
         return Response.json({ status: "ok", mode: "deterministic" });
       if (input.endsWith("/events")) return Response.json({ events: [] });
