@@ -1,0 +1,14 @@
+{
+  "theme": "dark",
+  "condition": "unsupported",
+  "browser": "153.0.8010.0",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "violations": [],
+  "incomplete": [
+    "color-contrast"
+  ],
+  "limitations": "Chromium automation; no actual assistive-technology test."
+}

@@ -1,0 +1,151 @@
+{
+  "conditions": {
+    "date": "2026-10-14T23:27:32.037Z",
+    "browser": "153.0.8010.0",
+    "build": "production dist",
+    "network": "loopback; no throttling; static assets uncompressed on measurement server",
+    "mode": "deterministic",
+    "samplesPerCondition": 1,
+    "scope": "Initial load and Fable Labs selection; first condition also generates draft, later conditions load that persisted draft; excludes approve, submit, provider mode and field traffic"
+  },
+  "assets": [
+    {
+      "asset": "/assets/index-0wmaK_Ap.js",
+      "bytes": 235804,
+      "gzipBytes": 72924
+    },
+    {
+      "asset": "/assets/index-CsB8h9Fm.css",
+      "bytes": 9077,
+      "gzipBytes": 2846
+    }
+  ],
+  "conditionsResults": [
+    {
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "draftGenerated": true,
+      "headingFocused": true,
+      "cls": 0.00014806978202160494,
+      "longTasks": [],
+      "overflow": false,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 26.800000000279397,
+          "responseEndMs": 6.7000000001862645
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 25
+      }
+    },
+    {
+      "width": 1440,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.00014806978202160494,
+      "longTasks": [],
+      "overflow": false,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 23.700000000186265,
+          "responseEndMs": 3.400000000372529
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 25
+      }
+    },
+    {
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.21099194711538463,
+      "longTasks": [],
+      "overflow": false,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 22.100000000093132,
+          "responseEndMs": 2.5
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 25
+      }
+    },
+    {
+      "width": 390,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.21099194711538463,
+      "longTasks": [],
+      "overflow": false,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 22.200000000186265,
+          "responseEndMs": 2.7999999998137355
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 25
+      }
+    },
+    {
+      "width": 320,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.1692,
+      "longTasks": [],
+      "overflow": false,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 21,
+          "responseEndMs": 2.3999999999068677
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 25
+      }
+    },
+    {
+      "width": 320,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.1692,
+      "longTasks": [],
+      "overflow": false,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 21.899999999906868,
+          "responseEndMs": 2.5
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 25
+      }
+    }
+  ]
+}

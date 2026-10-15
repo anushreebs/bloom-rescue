@@ -1,0 +1,755 @@
+{
+  "verification": {
+    "passed": 8,
+    "total": 8,
+    "rows": [
+      {
+        "id": "valid-full-source",
+        "expected_valid": true,
+        "actual_valid": true,
+        "passed": true,
+        "errors": []
+      },
+      {
+        "id": "fabricated-source",
+        "expected_valid": false,
+        "actual_valid": false,
+        "passed": true,
+        "errors": [
+          "Unknown or disallowed evidence source.",
+          "Answer contains content outside verified claims."
+        ]
+      },
+      {
+        "id": "foreign-candidate",
+        "expected_valid": false,
+        "actual_valid": false,
+        "passed": true,
+        "errors": [
+          "Unknown or disallowed evidence source.",
+          "Answer contains content outside verified claims."
+        ]
+      },
+      {
+        "id": "unsupported-extra-sentence",
+        "expected_valid": false,
+        "actual_valid": false,
+        "passed": true,
+        "errors": [
+          "Answer contains content outside verified claims."
+        ]
+      },
+      {
+        "id": "paraphrase-not-verbatim",
+        "expected_valid": false,
+        "actual_valid": false,
+        "passed": true,
+        "errors": [
+          "Claims must preserve the complete evidence text verbatim.",
+          "Answer contains content outside verified claims."
+        ]
+      },
+      {
+        "id": "negation-excised",
+        "expected_valid": false,
+        "actual_valid": false,
+        "passed": true,
+        "errors": [
+          "Claims must preserve the complete evidence text verbatim.",
+          "Answer contains content outside verified claims."
+        ]
+      },
+      {
+        "id": "no-claims",
+        "expected_valid": false,
+        "actual_valid": false,
+        "passed": true,
+        "errors": [
+          "No supporting claims were supplied."
+        ]
+      },
+      {
+        "id": "malformed-claim",
+        "expected_valid": false,
+        "actual_valid": false,
+        "passed": true,
+        "errors": [
+          "Malformed claim.",
+          "Answer contains content outside verified claims."
+        ]
+      }
+    ]
+  },
+  "mode": "deterministic",
+  "total": 35,
+  "passed": 35,
+  "categories": {
+    "supported": {
+      "passed": 4,
+      "total": 4
+    },
+    "missing": {
+      "passed": 3,
+      "total": 3
+    },
+    "ambiguous": {
+      "passed": 1,
+      "total": 1
+    },
+    "sensitive": {
+      "passed": 7,
+      "total": 7
+    },
+    "injection": {
+      "passed": 3,
+      "total": 3
+    },
+    "provenance": {
+      "passed": 4,
+      "total": 4
+    },
+    "context": {
+      "passed": 4,
+      "total": 4
+    },
+    "reuse": {
+      "passed": 1,
+      "total": 1
+    },
+    "contradiction": {
+      "passed": 2,
+      "total": 2
+    },
+    "partial": {
+      "passed": 2,
+      "total": 2
+    },
+    "specificity": {
+      "passed": 3,
+      "total": 3
+    },
+    "negation": {
+      "passed": 1,
+      "total": 1
+    }
+  },
+  "baseline": {
+    "name": "first-source extractive baseline; no policy/relevance checks",
+    "passed": 7,
+    "total": 35
+  },
+  "claim_bearing": 6,
+  "provenance_passed": 6,
+  "review_passed": 35,
+  "rows": [
+    {
+      "id": "supported-rest",
+      "category": "supported",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "I built REST API endpoints with request validation.",
+      "latency_ms": 0.729,
+      "tokens": null
+    },
+    {
+      "id": "supported-tests",
+      "category": "supported",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "I wrote pytest tests for request validation.",
+      "latency_ms": 0.086,
+      "tokens": null
+    },
+    {
+      "id": "supported-cloud",
+      "category": "supported",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "I deployed a service to AWS.",
+      "latency_ms": 0.088,
+      "tokens": null
+    },
+    {
+      "id": "supported-react",
+      "category": "supported",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "I built React interfaces in TypeScript.",
+      "latency_ms": 0.077,
+      "tokens": null
+    },
+    {
+      "id": "unsupported-cloud",
+      "category": "missing",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.029,
+      "tokens": null
+    },
+    {
+      "id": "empty-profile",
+      "category": "missing",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.011,
+      "tokens": null
+    },
+    {
+      "id": "unsupported-language",
+      "category": "missing",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.01,
+      "tokens": null
+    },
+    {
+      "id": "ambiguous-question",
+      "category": "ambiguous",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.01,
+      "tokens": null
+    },
+    {
+      "id": "authorization",
+      "category": "sensitive",
+      "expected": [
+        "sensitive"
+      ],
+      "actual": "sensitive",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.001,
+      "tokens": null
+    },
+    {
+      "id": "sponsor",
+      "category": "sensitive",
+      "expected": [
+        "sensitive"
+      ],
+      "actual": "sensitive",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.005,
+      "tokens": null
+    },
+    {
+      "id": "salary",
+      "category": "sensitive",
+      "expected": [
+        "sensitive"
+      ],
+      "actual": "sensitive",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.001,
+      "tokens": null
+    },
+    {
+      "id": "eligibility",
+      "category": "sensitive",
+      "expected": [
+        "sensitive"
+      ],
+      "actual": "sensitive",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.002,
+      "tokens": null
+    },
+    {
+      "id": "veteran",
+      "category": "sensitive",
+      "expected": [
+        "sensitive"
+      ],
+      "actual": "sensitive",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.001,
+      "tokens": null
+    },
+    {
+      "id": "sensitive-overrides-profile",
+      "category": "sensitive",
+      "expected": [
+        "sensitive"
+      ],
+      "actual": "sensitive",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.001,
+      "tokens": null
+    },
+    {
+      "id": "question-injection",
+      "category": "injection",
+      "expected": [
+        "needs_information"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.004,
+      "tokens": null
+    },
+    {
+      "id": "evidence-injection",
+      "category": "injection",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.013,
+      "tokens": null
+    },
+    {
+      "id": "cross-candidate",
+      "category": "provenance",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.01,
+      "tokens": null
+    },
+    {
+      "id": "bad-source-kind",
+      "category": "provenance",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.01,
+      "tokens": null
+    },
+    {
+      "id": "missing-context",
+      "category": "provenance",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.012,
+      "tokens": null
+    },
+    {
+      "id": "wrong-topic-metadata",
+      "category": "context",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.027,
+      "tokens": null
+    },
+    {
+      "id": "approved-reuse",
+      "category": "reuse",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "I built REST API endpoints with request validation.",
+      "latency_ms": 0.129,
+      "tokens": null
+    },
+    {
+      "id": "approved-wrong-domain",
+      "category": "context",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.081,
+      "tokens": null
+    },
+    {
+      "id": "approved-wrong-context",
+      "category": "context",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.029,
+      "tokens": null
+    },
+    {
+      "id": "contradiction-negation",
+      "category": "contradiction",
+      "expected": [
+        "needs_information"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.053,
+      "tokens": null
+    },
+    {
+      "id": "contradiction-years",
+      "category": "contradiction",
+      "expected": [
+        "needs_information"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.068,
+      "tokens": null
+    },
+    {
+      "id": "compound-rest-testing",
+      "category": "partial",
+      "expected": [
+        "needs_information",
+        "unsupported"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.063,
+      "tokens": null
+    },
+    {
+      "id": "compound-cloud-rest",
+      "category": "partial",
+      "expected": [
+        "needs_information",
+        "unsupported"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.059,
+      "tokens": null
+    },
+    {
+      "id": "specific-rest-years",
+      "category": "specificity",
+      "expected": [
+        "needs_information",
+        "unsupported"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.07,
+      "tokens": null
+    },
+    {
+      "id": "specific-production",
+      "category": "specificity",
+      "expected": [
+        "needs_information",
+        "unsupported"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.064,
+      "tokens": null
+    },
+    {
+      "id": "semantic-wrong-context",
+      "category": "context",
+      "expected": [
+        "needs_information",
+        "unsupported"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.067,
+      "tokens": null
+    },
+    {
+      "id": "negation-preserved",
+      "category": "negation",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "I have not deployed a service to AWS.",
+      "latency_ms": 0.117,
+      "tokens": null
+    },
+    {
+      "id": "sensitive-mixed",
+      "category": "sensitive",
+      "expected": [
+        "sensitive"
+      ],
+      "actual": "sensitive",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.003,
+      "tokens": null
+    },
+    {
+      "id": "unfamiliar-injection",
+      "category": "injection",
+      "expected": [
+        "needs_information",
+        "unsupported"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.004,
+      "tokens": null
+    },
+    {
+      "id": "unsupported-management",
+      "category": "specificity",
+      "expected": [
+        "needs_information",
+        "unsupported"
+      ],
+      "actual": "needs_information",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.098,
+      "tokens": null
+    },
+    {
+      "id": "candidate-injection-metadata",
+      "category": "provenance",
+      "expected": [
+        "unsupported"
+      ],
+      "actual": "unsupported",
+      "passed": true,
+      "verdict_ok": true,
+      "source_ids_ok": true,
+      "provenance_ok": true,
+      "review_ok": true,
+      "mode_ok": true,
+      "answer": "",
+      "latency_ms": 0.01,
+      "tokens": null
+    }
+  ],
+  "limitations": [
+    "Hand-authored small adversarial set, not random or representative.",
+    "Provenance is exact extraction, not truth or semantic relevance.",
+    "Independent labels include specificity and contradiction challenges beyond the initial keyword implementation.",
+    "All cases require review; no workflow submission is exercised here.",
+    "API mode does not imply a provider call on sensitive/abstained questions."
+  ]
+}

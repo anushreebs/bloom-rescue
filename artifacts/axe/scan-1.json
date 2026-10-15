@@ -1,0 +1,15 @@
+{
+  "browser": "153.0.8010.0",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "violations": [],
+  "passes": 23,
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious"
+    }
+  ]
+}

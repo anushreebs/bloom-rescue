@@ -1,0 +1,86 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "cpu": "x86_64",
+    "date_utc": "2026-10-14T22:45:57Z",
+    "transport": "loopback HTTP, fresh isolated SQLite, sequential warm requests, one uvicorn worker",
+    "warmup_list_requests": 5
+  },
+  "timings": {
+    "list": {
+      "samples": 30,
+      "median_ms": 1.268,
+      "p95_ms": 1.573,
+      "min_ms": 1.136,
+      "max_ms": 1.687,
+      "response_bytes_median": 3582
+    },
+    "events": {
+      "samples": 30,
+      "median_ms": 0.918,
+      "p95_ms": 1.159,
+      "min_ms": 0.793,
+      "max_ms": 1.227,
+      "response_bytes_median": 13
+    },
+    "resolve_deterministic": {
+      "samples": 30,
+      "median_ms": 1.826,
+      "p95_ms": 2.211,
+      "min_ms": 1.627,
+      "max_ms": 5.235,
+      "response_bytes_median": 1157,
+      "reported_draft_service": {
+        "samples": 30,
+        "median_ms": 0.155,
+        "p95_ms": 0.279,
+        "min_ms": 0.147,
+        "max_ms": 0.873
+      }
+    },
+    "direct_deterministic_service": {
+      "samples": 300,
+      "median_ms": 0.154,
+      "p95_ms": 0.225,
+      "min_ms": 0.147,
+      "max_ms": 0.985
+    }
+  },
+  "database": {
+    "list_read_statements": 11,
+    "application_count": 5,
+    "note": "One ID query plus application and evidence query per application; tiny five-item seed only.",
+    "candidate_filter_plan": [
+      [
+        4,
+        0,
+        224,
+        "SCAN applications USING INDEX sqlite_autoindex_applications_1"
+      ]
+    ]
+  },
+  "built_assets": [
+    {
+      "path": "frontend/dist/assets/index-CsB8h9Fm.css",
+      "bytes": 9077,
+      "gzip_bytes": 2847
+    },
+    {
+      "path": "frontend/dist/assets/index-ekzp7wgo.js",
+      "bytes": 235797,
+      "gzip_bytes": 72697
+    },
+    {
+      "path": "frontend/dist/index.html",
+      "bytes": 480,
+      "gzip_bytes": 314
+    }
+  ],
+  "live_llm": "NOT TESTED: script forces deterministic mode, no provider requests",
+  "limits": [
+    "Not a production capacity or concurrency benchmark.",
+    "No browser main-thread or React profiler measurements collected by this script.",
+    "Gzip bytes are offline size estimates, not measured transfer."
+  ]
+}

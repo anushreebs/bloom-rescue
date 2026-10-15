@@ -1,0 +1,11 @@
+{
+  "viewport": {
+    "width": 768,
+    "height": 1024
+  },
+  "browser": "153.0.8010.0",
+  "violations": [],
+  "incomplete": [
+    "color-contrast"
+  ]
+}

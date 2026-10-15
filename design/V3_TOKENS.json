@@ -1,0 +1,223 @@
+{
+  "status": "Delivered implementation tokens exported from current styles.css; prior proposal retained separately; not synced to Figma",
+  "unit": "px except explicit rem typography",
+  "color": {
+    "light": {
+      "canvas": "#F7F5F8",
+      "surface": "#FFFFFF",
+      "surfaceSubtle": "#F3EEF6",
+      "ink": "#302838",
+      "muted": "#665C6E",
+      "border": "#DFD6E5",
+      "brand": "#542C66",
+      "brandHover": "#683A7C",
+      "onBrand": "#FFFFFF",
+      "selected": "#F3EAF8",
+      "focus": "#8A4C24",
+      "successInk": "#28573D",
+      "successSurface": "#EAF4ED",
+      "warningInk": "#785016",
+      "warningSurface": "#FFF4DF",
+      "dangerInk": "#963D36",
+      "dangerSurface": "#FDEEEB",
+      "infoInk": "#51487A",
+      "infoSurface": "#F0EDF9"
+    },
+    "dark": {
+      "canvas": "#19151E",
+      "surface": "#241D2B",
+      "surfaceSubtle": "#2D2535",
+      "ink": "#F3EDF7",
+      "muted": "#C0B3CB",
+      "border": "#57475F",
+      "brand": "#D5ACE8",
+      "brandHover": "#E3C6F0",
+      "onBrand": "#271232",
+      "selected": "#392846",
+      "focus": "#F0BA7D",
+      "successInk": "#A9DDBB",
+      "successSurface": "#20392B",
+      "warningInk": "#F0CF8D",
+      "warningSurface": "#3E301B",
+      "dangerInk": "#F4B4AA",
+      "dangerSurface": "#422926",
+      "infoInk": "#D1C5F4",
+      "infoSurface": "#30283F"
+    }
+  },
+  "type": {
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "pageTitle": {
+      "size": "2rem",
+      "lineHeight": 1.2,
+      "weight": 650
+    },
+    "sectionTitle": {
+      "size": "1.25rem",
+      "lineHeight": 1.35,
+      "weight": 650
+    },
+    "body": {
+      "size": "0.9375rem",
+      "lineHeight": 1.6,
+      "weight": 400
+    },
+    "support": {
+      "size": "0.8125rem",
+      "lineHeight": 1.5,
+      "weight": 450
+    },
+    "metadata": {
+      "size": "0.75rem",
+      "lineHeight": 1.5,
+      "weight": 500
+    },
+    "label": {
+      "size": "0.8125rem",
+      "lineHeight": 1.4,
+      "weight": 650
+    }
+  },
+  "space": {
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 16,
+    "5": 20,
+    "6": 24,
+    "8": 32,
+    "10": 40,
+    "12": 48
+  },
+  "radius": {
+    "control": 10,
+    "card": 14,
+    "workspace": 20,
+    "pill": 999
+  },
+  "layout": {
+    "maxWidth": 1560,
+    "desktopGutter": 32,
+    "phoneGutter": 16,
+    "queueWidth": 280,
+    "evidenceWidth": 288,
+    "gap": 24,
+    "phoneBreakpoint": 760,
+    "stackEvidenceBreakpoint": 1150,
+    "minTouchTarget": 44
+  },
+  "motion": {
+    "microMs": 140,
+    "componentMs": 220,
+    "contextMs": 280,
+    "confirmationMs": 440,
+    "easing": "cubic-bezier(.22,1,.36,1)",
+    "enterTranslatePx": 8,
+    "maxStaggerMs": 80,
+    "reducedMotion": "no transform, no stagger, no looping animation; retain textual status"
+  },
+  "componentVariants": {
+    "button": [
+      "primary",
+      "secondary",
+      "quiet",
+      "destructive",
+      "loading",
+      "disabled"
+    ],
+    "queueCard": [
+      "default",
+      "hover",
+      "focus",
+      "selected",
+      "pending",
+      "submitted"
+    ],
+    "status": [
+      "attention",
+      "processing",
+      "review",
+      "approved",
+      "uncertain",
+      "failed",
+      "submitted"
+    ],
+    "evidence": [
+      "profile",
+      "approved-answer",
+      "missing",
+      "unverified"
+    ],
+    "editor": [
+      "draft",
+      "edited",
+      "checking",
+      "error",
+      "approved-readonly"
+    ],
+    "outcome": [
+      "ready-to-resume",
+      "uncertain",
+      "mock-submitted",
+      "failed"
+    ]
+  },
+  "implemented": {
+    "light": {
+      "canvas": "#f7f4f0",
+      "surface": "#fffdfa",
+      "surface-quiet": "#faf7fa",
+      "ink": "#302737",
+      "muted": "#716777",
+      "brand": "#5b3266",
+      "brand-hover": "#70407d",
+      "on-brand": "#ffffff",
+      "accent-soft": "#efe8f0",
+      "accent-ink": "#62446c",
+      "border": "#e6dfe5",
+      "border-strong": "#89758f",
+      "focus": "#8a4c22",
+      "success-bg": "#edf4ee",
+      "success-ink": "#355b40",
+      "success-border": "#b7cebc",
+      "warning-bg": "#fff5e7",
+      "warning-ink": "#795020",
+      "warning-border": "#e6cda7",
+      "error-bg": "#fff0ec",
+      "error-ink": "#963e30",
+      "error-border": "#e0b6ac",
+      "shadow": "#30203808",
+      "shadow-raised": "#30203812",
+      "motion-micro": "150ms",
+      "motion-panel": "240ms",
+      "motion-signature": "450ms",
+      "ease-out": "cubic-bezier(0.2, 0.7, 0.2, 1)"
+    },
+    "dark": {
+      "canvas": "#17131c",
+      "surface": "#211b28",
+      "surface-quiet": "#261f2e",
+      "ink": "#f5eef7",
+      "muted": "#c0b2ca",
+      "brand": "#dab8eb",
+      "brand-hover": "#e6c9f3",
+      "on-brand": "#302038",
+      "accent-soft": "#35273e",
+      "accent-ink": "#dfc4ec",
+      "border": "#493b53",
+      "border-strong": "#887296",
+      "focus": "#f4c895",
+      "success-bg": "#203428",
+      "success-ink": "#b6dfbf",
+      "success-border": "#496e52",
+      "warning-bg": "#392c1d",
+      "warning-ink": "#f0d09d",
+      "warning-border": "#7b603b",
+      "error-bg": "#3d2528",
+      "error-ink": "#ffc7be",
+      "error-border": "#895b58",
+      "shadow": "#00000016",
+      "shadow-raised": "#00000030"
+    }
+  }
+}

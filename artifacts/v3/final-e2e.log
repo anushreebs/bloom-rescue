@@ -1,0 +1,54 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> bloom-rescue-frontend@1.0.0 e2e
+> playwright test
+
+[WebServer] INFO:     Started server process [31]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+[WebServer] (node:34) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+[WebServer] (node:47) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 32 tests using 1 worker
+
+(node:81) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/recovery.spec.ts:11:1 › all five recovery scenarios, evidence, explicit consent and duplicate-safe reconciliation (9.5s)
+  ✓   2 [chromium] › e2e/recovery.spec.ts:24:1 › keyboard entry and mobile reflow, reduced motion and automated accessibility (1.1s)
+  ✓   3 [chromium] › e2e/recovery.spec.ts:27:1 › network failure is visible and can be retried (435ms)
+  ✓   4 [chromium] › e2e/ui-redesign.spec.ts:8:3 › redesigned workspace at 1440px: reflow, accessible content, clean console (1.7s)
+  ✓   5 [chromium] › e2e/ui-redesign.spec.ts:8:3 › redesigned workspace at 768px: reflow, accessible content, clean console (1.6s)
+  ✓   6 [chromium] › e2e/ui-redesign.spec.ts:8:3 › redesigned workspace at 390px: reflow, accessible content, clean console (1.6s)
+  ✓   7 [chromium] › e2e/ui-redesign.spec.ts:8:3 › redesigned workspace at 320px: reflow, accessible content, clean console (1.7s)
+  ✓   8 [chromium] › e2e/ui-redesign.spec.ts:33:1 › reduced motion suppresses decorative animations and keyboard activation retains review focus (606ms)
+  -   9 [chromium] › e2e/ui-redesign.spec.ts:63:1 › motion recording of actual fictional recovery workflow
+  ✓  10 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility light supported (1.5s)
+  ✓  11 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility light unsupported (1.4s)
+  ✓  12 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility light sensitive (1.3s)
+  ✓  13 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility light uncertain (1.6s)
+  ✓  14 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility dark supported (1.5s)
+  ✓  15 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility dark unsupported (1.2s)
+  ✓  16 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility dark sensitive (1.4s)
+  ✓  17 [chromium] › e2e/v3-accessibility.spec.ts:21:2 › v3 accessibility dark uncertain (1.2s)
+  ✓  18 [chromium] › e2e/v3-accessibility.spec.ts:36:1 › v3 answer validation is associated with editor; unrelated history error does not mark answer invalid (1.0s)
+  ✓  19 [chromium] › e2e/v3-accessibility.spec.ts:48:1 › v3 reduced motion, 320px reflow, keyboard selection and target sizes (512ms)
+  ✓  20 [chromium] › e2e/v3-accessibility.spec.ts:58:2 › v3 approval keeps focus on the new outcome when its triggering control disappears (728ms)
+  ✓  21 [chromium] › e2e/v3-workflows.spec.ts:49:1 › fixture: session edits survive A-B-A and allowlisted URL navigation; reload restores server draft (1.7s)
+  ✓  22 [chromium] › e2e/v3-workflows.spec.ts:62:1 › fixture: slow request reflects actual pending operation and no automatic approval (685ms)
+  ✓  23 [chromium] › e2e/v3-workflows.spec.ts:73:1 › fixture: successful approval remains approved when optional history fails (506ms)
+  ✓  24 [chromium] › e2e/v3-workflows.spec.ts:83:3 › fixture: long content and theme persistence reflow at 1440px (1.1s)
+  ✓  25 [chromium] › e2e/v3-workflows.spec.ts:83:3 › fixture: long content and theme persistence reflow at 768px (1.1s)
+  ✓  26 [chromium] › e2e/v3-workflows.spec.ts:83:3 › fixture: long content and theme persistence reflow at 390px (853ms)
+  ✓  27 [chromium] › e2e/v3-workflows.spec.ts:83:3 › fixture: long content and theme persistence reflow at 320px (943ms)
+  ✓  28 [chromium] › e2e/v3-workflows.spec.ts:95:1 › fixture: provider failure preserves an existing edited draft (525ms)
+  ✓  29 [chromium] › e2e/v3-workflows.spec.ts:105:1 › fixture: server revision change clears prior answer reuse consent (551ms)
+  -  30 [chromium] › e2e/v3-workflows.spec.ts:115:1 › V3 actual deterministic workflow recording and light/dark desktop/mobile captures
+  ✓  31 [chromium] › e2e/v3-workflows.spec.ts:167:1 › fixture: delayed approval cannot announce another application success after browser Back (981ms)
+  ✓  32 [chromium] › e2e/v3-workflows.spec.ts:182:1 › fixture: delayed refresh after Back cannot leave a stale running notice (842ms)
+
+  2 skipped
+  30 passed (44.9s)

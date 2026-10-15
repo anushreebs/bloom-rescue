@@ -1,0 +1,14 @@
+{
+  "scope": "Direct adversarial calls to extractive verifier, separate from question verdict evaluation.",
+  "evidence": [{"id":"e-rest","candidate_id":"c-demo","kind":"profile","topic":"REST API","context":"REST API experience","text":"I built REST API endpoints."},{"id":"e-other","candidate_id":"c-other","kind":"profile","topic":"REST API","context":"REST API experience","text":"I built REST API endpoints."},{"id":"e-negative","candidate_id":"c-demo","kind":"profile","topic":"cloud","context":"cloud experience","text":"I have not deployed a service to AWS."}],
+  "cases": [
+    {"id":"valid-full-source","answer":"I built REST API endpoints.","claims":[{"text":"I built REST API endpoints.","quote":"I built REST API endpoints.","source_id":"e-rest"}],"expected_valid":true},
+    {"id":"fabricated-source","answer":"I built REST API endpoints.","claims":[{"text":"I built REST API endpoints.","quote":"I built REST API endpoints.","source_id":"does-not-exist"}],"expected_valid":false},
+    {"id":"foreign-candidate","answer":"I built REST API endpoints.","claims":[{"text":"I built REST API endpoints.","quote":"I built REST API endpoints.","source_id":"e-other"}],"expected_valid":false},
+    {"id":"unsupported-extra-sentence","answer":"I built REST API endpoints. I deployed to AWS.","claims":[{"text":"I built REST API endpoints.","quote":"I built REST API endpoints.","source_id":"e-rest"}],"expected_valid":false},
+    {"id":"paraphrase-not-verbatim","answer":"I developed REST APIs.","claims":[{"text":"I developed REST APIs.","quote":"I built REST API endpoints.","source_id":"e-rest"}],"expected_valid":false},
+    {"id":"negation-excised","answer":"I have deployed a service to AWS.","claims":[{"text":"I have deployed a service to AWS.","quote":"I have deployed a service to AWS.","source_id":"e-negative"}],"expected_valid":false},
+    {"id":"no-claims","answer":"I built REST API endpoints.","claims":[],"expected_valid":false},
+    {"id":"malformed-claim","answer":"I built REST API endpoints.","claims":[{"text":"I built REST API endpoints.","source_id":"e-rest"}],"expected_valid":false}
+  ]
+}

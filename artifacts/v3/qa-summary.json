@@ -1,0 +1,20 @@
+{
+  "functional_browser_tests": 30,
+  "optional_recordings_skipped_in_normal_suite": 2,
+  "normal_suite_seconds": 44.9,
+  "capture_exit_code": 0,
+  "capture_last_run": {
+    "status": "passed",
+    "failedTests": []
+  },
+  "video_width": 1440,
+  "video_height": 1100,
+  "video_seconds": 14.36,
+  "axe_scans": 18,
+  "axe_violations": 0,
+  "limitations": [
+    "Headless Linux Chromium only",
+    "No real assistive technology",
+    "Transport fixtures do not establish live provider or ATS behavior"
+  ]
+}

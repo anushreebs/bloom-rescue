@@ -1,0 +1,361 @@
+{
+  "conditions": {
+    "date": "2026-10-14T23:47:36.462Z",
+    "browser": "153.0.8010.0",
+    "build": "production dist",
+    "network": "loopback; no throttling; static assets uncompressed on measurement server",
+    "mode": "deterministic",
+    "samplesPerCondition": 1,
+    "scope": "Initial load and Fable Labs selection; first condition also generates draft, later conditions load that persisted draft; excludes approve, submit, provider mode and field traffic"
+  },
+  "assets": [
+    {
+      "asset": "/assets/index-dc9lABdC.js",
+      "bytes": 240703,
+      "gzipBytes": 74321
+    },
+    {
+      "asset": "/assets/index-Diej4Kvm.css",
+      "bytes": 18591,
+      "gzipBytes": 5036
+    }
+  ],
+  "conditionsResults": [
+    {
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "draftGenerated": true,
+      "headingFocused": true,
+      "cls": 0.00012013509114583333,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.00012013509114583333,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "mode",
+              "previousRect": {
+                "x": 1228.96875,
+                "y": 15.96875,
+                "width": 179.03125,
+                "height": 31.046875,
+                "top": 15.96875,
+                "right": 1408,
+                "bottom": 47.015625,
+                "left": 1228.96875
+              },
+              "currentRect": {
+                "x": 1191.765625,
+                "y": 15.96875,
+                "width": 216.234375,
+                "height": 31.046875,
+                "top": 15.96875,
+                "right": 1408,
+                "bottom": 47.015625,
+                "left": 1191.765625
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 10,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 32.200000000186265,
+          "responseEndMs": 7.7999999998137355
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "width": 1440,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.00012013509114583333,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.00012013509114583333,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "mode",
+              "previousRect": {
+                "x": 1228.96875,
+                "y": 15.96875,
+                "width": 179.03125,
+                "height": 31.046875,
+                "top": 15.96875,
+                "right": 1408,
+                "bottom": 47.015625,
+                "left": 1228.96875
+              },
+              "currentRect": {
+                "x": 1191.765625,
+                "y": 15.96875,
+                "width": 216.234375,
+                "height": 31.046875,
+                "top": 15.96875,
+                "right": 1408,
+                "bottom": 47.015625,
+                "left": 1191.765625
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 22.699999999254942,
+          "responseEndMs": 2.099999999627471
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.008390703125000001,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.008390703125000001,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 665.484375,
+                "width": 390,
+                "height": 334.515625,
+                "top": 665.484375,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 690.53125,
+                "width": 390,
+                "height": 309.46875,
+                "top": 690.53125,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 9,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 22.40000000037253,
+          "responseEndMs": 2.6000000005587935
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "width": 390,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.008390703125000001,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.008390703125000001,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 665.484375,
+                "width": 390,
+                "height": 334.515625,
+                "top": 665.484375,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 690.53125,
+                "width": 390,
+                "height": 309.46875,
+                "top": 690.53125,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 21.700000000186265,
+          "responseEndMs": 2.400000000372529
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "width": 320,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.007939859375,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.007939859375,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 683.078125,
+                "width": 320,
+                "height": 316.921875,
+                "top": 683.078125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 708.125,
+                "width": 320,
+                "height": 291.875,
+                "top": 708.125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 9,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 22.700000000186265,
+          "responseEndMs": 2.2999999998137355
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "width": 320,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.007939859375,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.007939859375,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 683.078125,
+                "width": 320,
+                "height": 316.921875,
+                "top": 683.078125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 708.125,
+                "width": 320,
+                "height": 291.875,
+                "top": 708.125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 23.5,
+          "responseEndMs": 2.599999999627471
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    }
+  ]
+}

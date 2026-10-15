@@ -1,0 +1,711 @@
+{
+  "conditions": {
+    "date": "2026-10-15T05:31:07.063Z",
+    "browser": "153.0.8010.0",
+    "build": "production dist",
+    "network": "loopback; no throttling; static assets uncompressed on measurement server",
+    "mode": "deterministic",
+    "samplesPerCondition": 1,
+    "scope": "Both OS-selected theme modes; initial load and Fable Labs selection; first condition also generates draft, later conditions load that persisted draft; excludes approve, submit, provider mode and field traffic"
+  },
+  "assets": [
+    {
+      "asset": "/assets/index-D9Qpu3vw.js",
+      "bytes": 246929,
+      "gzipBytes": 75993
+    },
+    {
+      "asset": "/assets/index-rcSsQ7aZ.css",
+      "bytes": 22681,
+      "gzipBytes": 5429
+    }
+  ],
+  "conditionsResults": [
+    {
+      "theme": "light",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "draftGenerated": true,
+      "headingFocused": true,
+      "cls": 0.00026950324918016975,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.00026950324918016975,
+          "stage": "navigation",
+          "sources": [
+            {
+              "element": "topbar-actions",
+              "previousRect": {
+                "x": 1135.359375,
+                "y": 15.5,
+                "width": 272.640625,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1135.359375
+              },
+              "currentRect": {
+                "x": 1094.78125,
+                "y": 15.5,
+                "width": 313.21875,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1094.78125
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 9,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 49.29999999998836,
+          "responseEndMs": 10.700000000011642
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.00026950324918016975,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.00026950324918016975,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "topbar-actions",
+              "previousRect": {
+                "x": 1135.359375,
+                "y": 15.5,
+                "width": 272.640625,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1135.359375
+              },
+              "currentRect": {
+                "x": 1094.78125,
+                "y": 15.5,
+                "width": 313.21875,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1094.78125
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 32.70000000001164,
+          "responseEndMs": 2.6000000000349246
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.005926875,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.005926875,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 781.90625,
+                "width": 390,
+                "height": 218.09375,
+                "top": 781.90625,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 809.09375,
+                "width": 390,
+                "height": 190.90625,
+                "top": 809.09375,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 8,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 41.5,
+          "responseEndMs": 4.5
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.005926875,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.005926875,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 781.90625,
+                "width": 390,
+                "height": 218.09375,
+                "top": 781.90625,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 809.09375,
+                "width": 390,
+                "height": 190.90625,
+                "top": 809.09375,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 33.40000000002328,
+          "responseEndMs": 5.7999999999883585
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.0045403125,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.0045403125,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 833.09375,
+                "width": 320,
+                "height": 166.90625,
+                "top": 833.09375,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 860.28125,
+                "width": 320,
+                "height": 139.71875,
+                "top": 860.28125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 8,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 41.399999999965075,
+          "responseEndMs": 4.7000000000116415
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.0045403125,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.0045403125,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 833.09375,
+                "width": 320,
+                "height": 166.90625,
+                "top": 833.09375,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 860.28125,
+                "width": 320,
+                "height": 139.71875,
+                "top": 860.28125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 33.699999999953434,
+          "responseEndMs": 3.5
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.0002712253146701389,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.0002712253146701389,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "topbar-actions",
+              "previousRect": {
+                "x": 1133.765625,
+                "y": 15.5,
+                "width": 274.234375,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1133.765625
+              },
+              "currentRect": {
+                "x": 1093.1875,
+                "y": 15.5,
+                "width": 314.8125,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1093.1875
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 8,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 29.899999999965075,
+          "responseEndMs": 2.7999999999883585
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.0002712253146701389,
+      "longTasks": [
+        66
+      ],
+      "shiftDetails": [
+        {
+          "value": 0.0002712253146701389,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "topbar-actions",
+              "previousRect": {
+                "x": 1133.765625,
+                "y": 15.5,
+                "width": 274.234375,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1133.765625
+              },
+              "currentRect": {
+                "x": 1093.1875,
+                "y": 15.5,
+                "width": 314.8125,
+                "height": 44,
+                "top": 15.5,
+                "right": 1408,
+                "bottom": 59.5,
+                "left": 1093.1875
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 47.29999999998836,
+          "responseEndMs": 10.399999999965075
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.005926875,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.005926875,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 781.90625,
+                "width": 390,
+                "height": 218.09375,
+                "top": 781.90625,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 809.09375,
+                "width": 390,
+                "height": 190.90625,
+                "top": 809.09375,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 8,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 48.5,
+          "responseEndMs": 11.599999999976717
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.005926875,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.005926875,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 781.90625,
+                "width": 390,
+                "height": 218.09375,
+                "top": 781.90625,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 809.09375,
+                "width": 390,
+                "height": 190.90625,
+                "top": 809.09375,
+                "right": 390,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 33.5,
+          "responseEndMs": 3.7999999999883585
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "reducedMotion": "no-preference",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.0045403125,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.0045403125,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 833.09375,
+                "width": 320,
+                "height": 166.90625,
+                "top": 833.09375,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 860.28125,
+                "width": 320,
+                "height": 139.71875,
+                "top": 860.28125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 8,
+      "elementsWithTransitionStyles": 8,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 31.5,
+          "responseEndMs": 3.6000000000349246
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "reducedMotion": "reduce",
+      "draftGenerated": false,
+      "headingFocused": true,
+      "cls": 0.0045403125,
+      "longTasks": [],
+      "shiftDetails": [
+        {
+          "value": 0.0045403125,
+          "stage": "select",
+          "sources": [
+            {
+              "element": "review",
+              "previousRect": {
+                "x": 0,
+                "y": 833.09375,
+                "width": 320,
+                "height": 166.90625,
+                "top": 833.09375,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              },
+              "currentRect": {
+                "x": 0,
+                "y": 860.28125,
+                "width": 320,
+                "height": 139.71875,
+                "top": 860.28125,
+                "right": 320,
+                "bottom": 1000,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "elementsWithAnimationStyles": 0,
+      "elementsWithTransitionStyles": 0,
+      "activeAnimations": [],
+      "navigation": [
+        {
+          "domContentLoadedMs": 34.79999999998836,
+          "responseEndMs": 3.7000000000116415
+        }
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          "color-contrast"
+        ],
+        "passes": 27
+      }
+    }
+  ]
+}
