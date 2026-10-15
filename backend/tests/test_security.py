@@ -1,5 +1,6 @@
 """Adversarial local-demo boundaries; no external targets or credentials."""
 
+from session_helpers import establish, workspace_path
 import json
 import sqlite3
 
@@ -11,9 +12,8 @@ from app.main import create_app
 @pytest.fixture
 def client(tmp_path, monkeypatch):
     monkeypatch.setenv("LLM_MODE", "deterministic")
-    monkeypatch.setenv("DEMO_API_TOKEN", "local-demo-token")
     with TestClient(create_app(str(tmp_path / "security.sqlite3"))) as instance:
-        instance.headers["X-Demo-Token"] = "local-demo-token"
+        establish(instance)
         yield instance
 
 
@@ -29,15 +29,18 @@ def client(tmp_path, monkeypatch):
         ("delete", "/answers/e-approved-rest", None),
     ],
 )
-def test_every_data_route_requires_token(client, method, path, body):
-    for headers in ({}, {"X-Demo-Token": "wrong"}):
+def test_every_data_route_requires_session(client, method, path, body):
+    for headers in (
+        {"Origin": "http://127.0.0.1:5173"},
+        {"Origin": "http://127.0.0.1:5173", "X-Demo-Token": "wrong"},
+    ):
         with TestClient(client.app) as anonymous:
             response = anonymous.request(method, path, json=body, headers=headers)
         assert response.status_code == 401
 
 
 def test_foreign_application_and_answer_cannot_be_accessed(client):
-    with sqlite3.connect(client.app.state.db_path) as db:
+    with sqlite3.connect(workspace_path(client)) as db:
         own = json.loads(
             db.execute("SELECT data FROM applications WHERE id='a-rest'").fetchone()[0]
         )
@@ -106,7 +109,7 @@ def test_cors_disallows_unconfigured_origin(client):
         headers={
             "Origin": "https://attacker.example",
             "Access-Control-Request-Method": "GET",
-            "Access-Control-Request-Headers": "X-Demo-Token",
+            "Access-Control-Request-Headers": "X-CSRF-Token",
         },
     )
     assert response.status_code == 400

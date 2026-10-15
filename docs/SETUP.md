@@ -1,3 +1,5 @@
+> Current session-based public-demo instructions: [DEPLOYMENT.md](../DEPLOYMENT.md). Older verification counts below are historical.
+
 # Reproducible local setup
 
 Requirements: Python 3.12 and Node.js 24 with npm. Run from the repository root. No production service, login, real candidate data, or model credentials are needed for deterministic mode.
@@ -25,7 +27,7 @@ cd frontend
 npm run dev
 ```
 
-Open http://127.0.0.1:5173. Health check: `curl http://127.0.0.1:8000/health`. Vite proxies `/api` to the backend. The public local token `local-demo-token` is a demo boundary, not production authentication. Do not expose these development servers to the internet.
+Open http://127.0.0.1:5173. Health check: `curl http://127.0.0.1:8000/health`. Vite proxies `/api` to the backend. Local mode uses HttpOnly session cookies over loopback HTTP. Do not expose development servers to the internet; public mode requires the deployment configuration linked above.
 
 ## Checks
 

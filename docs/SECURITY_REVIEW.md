@@ -1,3 +1,5 @@
+> Historical local-prototype review. The token and local-only deployment constraints below are superseded for the new public-demo mode by [PUBLIC_DEMO_SECURITY.md](PUBLIC_DEMO_SECURITY.md) and [DEPLOYMENT.md](../DEPLOYMENT.md). Original findings remain recorded as historical evidence.
+
 # Security review
 
 ## Scope and outcome

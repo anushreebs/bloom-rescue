@@ -22,6 +22,7 @@ async function fixtures(page: Page, options: { delayedResolve?: boolean; failRes
   const barrier = new Promise<void>(resolve => { release = resolve; });
   await page.route('**/api/**', async route => {
     const pathname = new URL(route.request().url()).pathname.replace('/api', '');
+    if (pathname === '/session') return route.fulfill({ json: { csrf_token: 'fixture-csrf' } });
     if (pathname === '/health') return route.fulfill({ json: { mode: 'deterministic', status: 'ok' } });
     if (pathname === '/applications') return route.fulfill({ json: { applications } });
     if (pathname === '/answers') return route.fulfill({ json: { answers: [] } });

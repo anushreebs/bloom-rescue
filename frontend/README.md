@@ -2,7 +2,7 @@
 
 React 19 / TypeScript / Vite single-page client. All data is fictional. This is an independent concept, not Bloom's application or an authorized integration.
 
-From this directory: `npm ci`, `npm run dev`. Start the backend separately as described in the root README. Vite proxies `/api` to localhost:8000. The demo header token is public local-demo-token; it is not production authentication.
+From this directory: `npm ci`, `npm run dev`. Start the backend separately as described in the root README. Vite proxies `/api` to localhost:8000. The client obtains a server-issued HttpOnly session cookie and keeps its CSRF token in memory. See [public deployment configuration](../DEPLOYMENT.md).
 
 Use the queue buttons to select a scenario, generate an extractive draft, inspect its source, approve, and separately resume a mock application. Cloud answers without evidence remain blocked. Authorization requires user-supplied fictional information and explicit confirmation. The timeout scenario offers reconciliation, never an unqualified success. Saved-answer permission can be revoked independently of an existing approval.
 

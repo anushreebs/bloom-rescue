@@ -1,43 +1,59 @@
-"""Local-only fictional application recovery API."""
+"""Session-isolated fictional application recovery API."""
 
 import hashlib
-import hmac
 import json
 import logging
 import os
 import uuid
 from datetime import datetime, timezone
-from typing import Annotated
-from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.exceptions import RequestValidationError
+from starlette.responses import JSONResponse
 from . import ai
 from .ats import AmbiguousSubmissionError, MockATS
-from .db import CANDIDATE, connect, event, initialize, load
+from .db import CANDIDATE, connect, event, load
 from .schemas import Application, ApprovalRequest, EmptyRequest, Resolution, ResumeRequest
 from .workflow import is_sensitive, transition
+from .sessions import Sessions, workspace
 
 logger = logging.getLogger("bloom_rescue")
 
 
 def create_app(db_path: str | None = None) -> FastAPI:
-    path = str(db_path or os.getenv("DATABASE_PATH") or "data/bloom-rescue.sqlite3")
-    initialize(path)
-    ats = MockATS(path)
-    api = FastAPI(title="Bloom Rescue — fictional independent demo")
+    path = str(db_path or os.getenv("DATABASE_PATH") or "data/sessions.sqlite3")
+    sessions = Sessions(path)
+    api = FastAPI(
+        title="Bloom Rescue — fictional independent demo",
+        docs_url=None,
+        redoc_url=None,
+        openapi_url=None,
+        lifespan=sessions.lifespan,
+    )
     api.state.db_path = path
-    origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
+    api.state.sessions = sessions
     api.add_middleware(
         CORSMiddleware,
-        allow_origins=origins,
+        allow_origins=sessions.origins,
+        allow_credentials=True,
         allow_methods=["GET", "POST", "DELETE"],
-        allow_headers=["Content-Type", "X-Demo-Token"],
+        allow_headers=["Content-Type", "X-CSRF-Token"],
     )
+    api.middleware("http")(sessions.dispatch)
 
-    def authorized(x_demo_token: Annotated[str | None, Header()] = None):
-        if not hmac.compare_digest(
-            (x_demo_token or "").encode(), os.getenv("DEMO_API_TOKEN", "local-demo-token").encode()
-        ):
-            raise HTTPException(401, "A valid local demo token is required.")
+    @api.middleware("http")
+    async def security_headers(request: Request, call_next):
+        response = await call_next(request)
+        response.headers["Cache-Control"] = "no-store"
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["Referrer-Policy"] = "no-referrer"
+        return response
+
+    @api.exception_handler(RequestValidationError)
+    async def validation_error(request: Request, exc: RequestValidationError):
+        return JSONResponse(
+            {"detail": "Invalid request. Check the required fields and limits."}, status_code=422
+        )
 
     def required(db, aid: str) -> dict:
         app = load(db, aid)
@@ -60,9 +76,9 @@ def create_app(db_path: str | None = None) -> FastAPI:
     def health():
         return {"status": "ok", "mode": os.getenv("LLM_MODE", "deterministic")}
 
-    @api.get("/applications", dependencies=[Depends(authorized)])
+    @api.get("/applications")
     def applications():
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             rows = db.execute(
                 "SELECT id FROM applications WHERE candidate_id=? ORDER BY id", (CANDIDATE,)
             ).fetchall()
@@ -75,10 +91,9 @@ def create_app(db_path: str | None = None) -> FastAPI:
     @api.post(
         "/applications/{aid}/resolve",
         response_model=Application,
-        dependencies=[Depends(authorized)],
     )
     def resolve(aid: str, body: EmptyRequest):
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             db.execute("BEGIN IMMEDIATE")
             app = required(db, aid)
             if app["state"] == "resolving":
@@ -98,6 +113,8 @@ def create_app(db_path: str | None = None) -> FastAPI:
                         "Draft is still resolving. Refresh, or retry after two minutes if it stopped.",
                     )
                 move(db, app, "resolve_error", {"reason": "expired_resolution_lease"})
+            if db.execute("SELECT count(*) FROM events").fetchone()[0] >= 200:
+                raise HTTPException(429, "Workspace action limit reached. Reset the demo.")
             move(db, app, "resolve_start")
             pending_revision = app["revision"]
         # Deliberately do not hold a write transaction during model/network work.
@@ -107,7 +124,7 @@ def create_app(db_path: str | None = None) -> FastAPI:
             ).model_dump()
         except Exception:
             logger.warning(json.dumps({"event": "resolution_failed", "application_id": aid}))
-            with connect(path) as db:
+            with connect(workspace.get()) as db:
                 db.execute("BEGIN IMMEDIATE")
                 current = required(db, aid)
                 if current["revision"] == pending_revision and current["state"] == "resolving":
@@ -115,7 +132,7 @@ def create_app(db_path: str | None = None) -> FastAPI:
             raise HTTPException(
                 503, "Draft service unavailable. Your application is saved; retry resolution."
             ) from None
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             db.execute("BEGIN IMMEDIATE")
             current = required(db, aid)
             revision(current, pending_revision)
@@ -131,10 +148,9 @@ def create_app(db_path: str | None = None) -> FastAPI:
     @api.post(
         "/applications/{aid}/approve",
         response_model=Application,
-        dependencies=[Depends(authorized)],
     )
     def approve(aid: str, body: ApprovalRequest):
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             db.execute("BEGIN IMMEDIATE")
             app = required(db, aid)
             revision(app, body.revision)
@@ -203,11 +219,9 @@ def create_app(db_path: str | None = None) -> FastAPI:
             )
             return app
 
-    @api.post(
-        "/applications/{aid}/resume", response_model=Application, dependencies=[Depends(authorized)]
-    )
+    @api.post("/applications/{aid}/resume", response_model=Application)
     def resume(aid: str, body: ResumeRequest):
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             db.execute("BEGIN IMMEDIATE")
             app = required(db, aid)
             # Terminal retry is read-only even if the client has an old revision.
@@ -223,6 +237,7 @@ def create_app(db_path: str | None = None) -> FastAPI:
                 move(db, app, "submit_start")
             pending = app["revision"]
         # Adapter owns a separate SQLite connection: never nest write transactions.
+        ats = MockATS(workspace.get())
         receipt = ats.status(aid, logical_key)
         ambiguous = False
         # This adapter is a local authoritative store: a negative lookup means
@@ -236,7 +251,7 @@ def create_app(db_path: str | None = None) -> FastAPI:
             except Exception:
                 ambiguous = True
                 logger.warning(json.dumps({"event": "submission_uncertain", "application_id": aid}))
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             db.execute("BEGIN IMMEDIATE")
             current = required(db, aid)
             if current["state"] == "submitted":
@@ -256,18 +271,18 @@ def create_app(db_path: str | None = None) -> FastAPI:
                 move(db, current, "reconcile_pending", {"mock": True})
             return current
 
-    @api.get("/applications/{aid}/events", dependencies=[Depends(authorized)])
+    @api.get("/applications/{aid}/events")
     def events(aid: str):
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             required(db, aid)
             rows = db.execute(
                 "SELECT * FROM events WHERE application_id=? ORDER BY id", (aid,)
             ).fetchall()
             return {"events": [{**dict(row), "detail": json.loads(row["detail"])} for row in rows]}
 
-    @api.get("/answers", dependencies=[Depends(authorized)])
+    @api.get("/answers")
     def answers():
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             rows = db.execute(
                 "SELECT data FROM evidence WHERE candidate_id=?", (CANDIDATE,)
             ).fetchall()
@@ -279,9 +294,9 @@ def create_app(db_path: str | None = None) -> FastAPI:
                 ]
             }
 
-    @api.delete("/answers/{answer_id}", dependencies=[Depends(authorized)])
+    @api.delete("/answers/{answer_id}")
     def revoke(answer_id: str):
-        with connect(path) as db:
+        with connect(workspace.get()) as db:
             row = db.execute(
                 "SELECT data FROM evidence WHERE id=? AND candidate_id=?", (answer_id, CANDIDATE)
             ).fetchone()

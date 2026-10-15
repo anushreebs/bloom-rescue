@@ -1,3 +1,35 @@
+let csrfToken: string | undefined;
+let sessionRequest: Promise<void> | undefined;
+async function ensureSession() {
+  if (csrfToken) return;
+  if (!sessionRequest) {
+    sessionRequest = fetch("/api/session", {
+      method: "POST",
+      signal: AbortSignal.timeout(15000),
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: "{}",
+    })
+      .then(async (response) => {
+        if (!response.ok)
+          throw new Error("Demo session unavailable. Please retry shortly.");
+        const data = await response.json();
+        if (typeof data.csrf_token !== "string" || !data.csrf_token) {
+          throw new Error("Invalid demo session response. Please reload.");
+        }
+        csrfToken = data.csrf_token;
+      })
+      .finally(() => {
+        sessionRequest = undefined;
+      });
+  }
+  await sessionRequest;
+}
+export async function resetDemo() {
+  await request("/session/reset", { method: "POST", body: "{}" });
+  csrfToken = undefined;
+  window.location.assign(window.location.pathname);
+}
 export class ApiError extends Error {
   status: number;
   constructor(message: string, status: number) {
@@ -9,20 +41,23 @@ export async function request<T>(
   path: string,
   options: RequestInit = {},
 ): Promise<T> {
+  await ensureSession();
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
   try {
     const response = await fetch(`/api${path}`, {
       ...options,
+      credentials: "same-origin",
       signal: controller.signal,
       headers: {
         "Content-Type": "application/json",
-        "X-Demo-Token": "local-demo-token",
+        ...(csrfToken ? { "X-CSRF-Token": csrfToken } : {}),
         ...options.headers,
       },
     });
     const data: unknown = await response.json().catch(() => null);
     if (!response.ok) {
+      if (response.status === 401) csrfToken = undefined;
       const detail =
         data && typeof data === "object" && "detail" in data
           ? data.detail

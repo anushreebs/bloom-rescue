@@ -3,12 +3,16 @@
 from fastapi.testclient import TestClient
 from app.main import create_app
 
-HEADERS = {"X-Demo-Token": "local-demo-token"}
+from session_helpers import establish
+
+HEADERS = {}
 
 
 def test_reuse_after_consent_and_revoke_preserves_receipt(tmp_path, monkeypatch):
     monkeypatch.setenv("LLM_MODE", "deterministic")
     client = TestClient(create_app(str(tmp_path / "integration.sqlite3")))
+
+    establish(client)
 
     def draft_approve(aid, save=False):
         draft = client.post(f"/applications/{aid}/resolve", headers=HEADERS, json={}).json()

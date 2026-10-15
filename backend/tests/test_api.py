@@ -1,3 +1,4 @@
+from session_helpers import establish, workspace_path, restart
 import sqlite3
 import json
 import pytest
@@ -9,7 +10,7 @@ from app.main import create_app
 def client(tmp_path, monkeypatch):
     monkeypatch.setenv("LLM_MODE", "deterministic")
     with TestClient(create_app(str(tmp_path / "test.sqlite3"))) as client:
-        client.headers["X-Demo-Token"] = "local-demo-token"
+        establish(client)
         yield client
 
 
@@ -35,7 +36,7 @@ def approved(client, aid="a-rest", save=False):
 
 
 def test_token_and_candidate_boundary(client):
-    assert client.get("/applications", headers={"X-Demo-Token": "wrong"}).status_code == 401
+    assert TestClient(client.app).get("/applications").status_code == 401
     assert len(client.get("/applications").json()["applications"]) == 5
     assert client.post("/applications/other/resolve", json={}).status_code == 404
 
@@ -98,8 +99,7 @@ def test_timeout_reconciles_without_duplicate_after_restart(client):
     )
     assert response.json()["state"] == "verification_required"
     app = response.json()
-    restarted = TestClient(create_app(client.app.state.db_path))
-    restarted.headers["X-Demo-Token"] = "local-demo-token"
+    restarted = restart(client)
     response = restarted.post(
         "/applications/a-timeout/resume",
         json={"revision": app["revision"], "idempotency_key": "different"},
@@ -144,7 +144,7 @@ def test_provider_failure_safe_and_retry(client, monkeypatch):
 
 
 def test_external_candidate_evidence_never_returned(client):
-    with sqlite3.connect(client.app.state.db_path) as db:
+    with sqlite3.connect(workspace_path(client)) as db:
         db.execute(
             "INSERT INTO evidence VALUES(?,?,?)",
             (
@@ -159,8 +159,7 @@ def test_external_candidate_evidence_never_returned(client):
 
 def test_revocation_survives_restart(client):
     assert client.delete("/answers/e-approved-rest").status_code == 200
-    restarted = TestClient(create_app(client.app.state.db_path))
-    restarted.headers["X-Demo-Token"] = "local-demo-token"
+    restarted = restart(client)
     assert restarted.get("/answers").json()["answers"] == []
 
 
